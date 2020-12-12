@@ -16,6 +16,11 @@ from src.main.play_the_number_lottery import play_the_number_lottery
 from src.main.compute_chinese_zodiac import compute_chinese_zodiac
 from src.main.addition_quiz_until_correct import addition_quiz_until_correct
 from src.main.too_high_or_too_low_number_guessing_game import too_high_or_too_low_number_guessing_game
+from src.main.five_problem_addition_quiz import five_problem_addition_quiz
+from src.main.print_multiplication_table import print_multiplication_table
+from src.main.find_greatest_common_divisor import find_greatest_common_divisor
+from src.main.predict_year_when_future_tuition_is_doubled import predict_year_when_future_tuition_is_doubled
+from src.main.convert_decimal_to_hexadecimal import convert_decimal_to_hexadecimal
 
 
 # Compute the area of a circle
@@ -131,3 +136,36 @@ print("\n")
 
 # Ask the user to guess a random number between 0 and 100
 too_high_or_too_low_number_guessing_game()
+print("\n")
+
+# Quiz the user on five addition problems
+num_correct_answers = five_problem_addition_quiz()
+print("You answered {} correctly!".format(num_correct_answers))
+print("\n")
+
+# Print a multiplication table
+print_multiplication_table()
+print("\n")
+
+# Find the greatest common divisor of two numbers
+num_1 = eval(input("Type a number: "))
+num_2 = eval(input("Type another number: "))
+greatest_common_divisor = find_greatest_common_divisor(num_1, num_2)
+print("The greatest common divisor of {} and {} is: {}".format(num_1, num_2, greatest_common_divisor))
+print("\n")
+
+# predict_year_when_future_tuition_is_doubled
+tuition = eval(input("Type a tuition in dollars: "))
+tuition_increase_percentage = eval(input("Type how much the tuition increases every year in percent: "))
+when_tuition_is_doubled = predict_year_when_future_tuition_is_doubled(tuition, tuition_increase_percentage)
+print("Tuition will be doubled in {} years from now.".format(when_tuition_is_doubled))
+print("\n")
+
+# Convert decimal to hexadecimal
+decimal = input("Type a decimal number: (e.g. 1 or 255): ")
+hexadecimal = convert_decimal_to_hexadecimal(decimal)
+print("{} in hexadecimal is: {}".format(decimal, hexadecimal))
+print("\n")
+
+# Get the first 20 prime numbers
+print(get_first_20_prime_numbers())
