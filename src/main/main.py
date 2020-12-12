@@ -21,6 +21,9 @@ from src.main.print_multiplication_table import print_multiplication_table
 from src.main.find_greatest_common_divisor import find_greatest_common_divisor
 from src.main.predict_year_when_future_tuition_is_doubled import predict_year_when_future_tuition_is_doubled
 from src.main.convert_decimal_to_hexadecimal import convert_decimal_to_hexadecimal
+from src.main.get_first_20_prime_numbers import get_first_20_prime_numbers
+from src.main.calculate_num_of_integers_above_the_average_of_100_random_integers import calculate_num_of_integers_above_the_average_of_100_random_integers
+from src.main.get_4_cards_randomly_from_a_deck_of_cards import get_4_cards_randomly_from_a_deck_of_cards
 
 
 # Compute the area of a circle
@@ -169,3 +172,12 @@ print("\n")
 
 # Get the first 20 prime numbers
 print(get_first_20_prime_numbers())
+print("\n")
+
+# Calculate how many integers are above the average of 100 random integers
+number_integers_above_average = calculate_num_of_integers_above_the_average_of_100_random_integers()
+print("{} numbers are above the average.".format(number_integers_above_average))
+
+# Get 4 cards randomly from a deck of 52 cards
+four_random_cards = get_4_cards_randomly_from_a_deck_of_cards()
+print(four_random_cards)
