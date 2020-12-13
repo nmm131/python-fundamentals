@@ -9,4 +9,4 @@ def get_current_time():
     return hours, minutes, seconds
 
 
-print(get_current_time())
+#print(get_current_time())

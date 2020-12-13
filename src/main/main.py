@@ -1,3 +1,5 @@
+import random as m
+import string
 from src.main.compute_the_area_of_a_circle import computing_the_area_of_a_circle
 from src.main.time_in_seconds_to_time_in_minutes_and_seconds import time_in_seconds_to_time_in_minutes_and_seconds
 from src.main.convert_fahrenheit_to_celsius import convert_fahrenheit_to_celsius
@@ -24,7 +26,7 @@ from src.main.convert_decimal_to_hexadecimal import convert_decimal_to_hexadecim
 from src.main.get_first_20_prime_numbers import get_first_20_prime_numbers
 from src.main.calculate_num_of_integers_above_the_average_of_100_random_integers import calculate_num_of_integers_above_the_average_of_100_random_integers
 from src.main.get_4_cards_randomly_from_a_deck_of_cards import get_4_cards_randomly_from_a_deck_of_cards
-
+from src.main.count_occurrence_of_lowercase_letter_in_list import count_occurrence_of_lowercase_letter_in_list
 
 # Compute the area of a circle
 radius = eval(input("Type a radius: "))
@@ -85,6 +87,7 @@ print("\n")
 # Convert hexadecimal to decimal
 hexadecimal = input("Type a hexadecimal digit (e.g. 00 or FF): ")
 decimal = convert_hexadecimal_to_decimal(hexadecimal)
+print("{} in decimal is {}".format(hexadecimal, decimal))
 print("\n")
 
 # Generate a random character
@@ -98,8 +101,9 @@ print(is_answer_correct)
 print("\n")
 
 # Calculate body mass index
-weight = eval(input("Type your weight in lbs: "))
-bmi = calculate_body_mass_index(weight)
+weight_in_kilograms = eval(input("Type your weight in kilograms: "))
+height_in_meters = eval(input("Type your height in meters: "))
+bmi = calculate_body_mass_index(weight_in_kilograms, height_in_meters)
 print(bmi)
 print("\n")
 
@@ -138,12 +142,13 @@ print(is_answer_correct)
 print("\n")
 
 # Ask the user to guess a random number between 0 and 100
-too_high_or_too_low_number_guessing_game()
+response = too_high_or_too_low_number_guessing_game()
+print(response)
 print("\n")
 
 # Quiz the user on five addition problems
 num_correct_answers = five_problem_addition_quiz()
-print("You answered {} correctly!".format(num_correct_answers))
+print("You answered {}/5 correctly!".format(num_correct_answers))
 print("\n")
 
 # Print a multiplication table
@@ -157,7 +162,7 @@ greatest_common_divisor = find_greatest_common_divisor(num_1, num_2)
 print("The greatest common divisor of {} and {} is: {}".format(num_1, num_2, greatest_common_divisor))
 print("\n")
 
-# predict_year_when_future_tuition_is_doubled
+# Predict the number of years when future tuition will be doubled
 tuition = eval(input("Type a tuition in dollars: "))
 tuition_increase_percentage = eval(input("Type how much the tuition increases every year in percent: "))
 when_tuition_is_doubled = predict_year_when_future_tuition_is_doubled(tuition, tuition_increase_percentage)
@@ -170,14 +175,26 @@ hexadecimal = convert_decimal_to_hexadecimal(decimal)
 print("{} in hexadecimal is: {}".format(decimal, hexadecimal))
 print("\n")
 
-# Get the first 20 prime numbers
-print(get_first_20_prime_numbers())
+# Get the prime numbers between 2 and 20
+print("The first 20 prime numbers are {}".format(get_first_20_prime_numbers()))
 print("\n")
 
 # Calculate how many integers are above the average of 100 random integers
 number_integers_above_average = calculate_num_of_integers_above_the_average_of_100_random_integers()
 print("{} numbers are above the average.".format(number_integers_above_average))
+print("\n")
 
 # Get 4 cards randomly from a deck of 52 cards
 four_random_cards = get_4_cards_randomly_from_a_deck_of_cards()
 print(four_random_cards)
+print("\n")
+
+# Count the occurrence of a lowercase letter in a list with 100 random lowercase letters
+list_of_lowercase_letters = []
+for count in range(100):
+    list_of_lowercase_letters.append(m.choice(string.ascii_letters.lower()))
+
+lowercase_letter = str(input("Type a lowercase letter: ")).lower()
+occurrence = count_occurrence_of_lowercase_letter_in_list(list_of_lowercase_letters, lowercase_letter)
+print("The letter {} appears {} times in the passed in list".format(lowercase_letter, occurrence))
+print("\n")
